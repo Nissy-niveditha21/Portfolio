@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,111 +9,125 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Custom Cursor -->
+  <!-- Cursor -->
   <div class="cursor"></div>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="container">
-      <h1 class="logo">Nissy.dev</h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
+    <h2>nissy.dev</h2>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero fade">
-    <div class="container">
-      <h2 class="gradient-text">Hi, I'm Nissy 👋</h2>
-      <p class="hero-text">
-        B.Tech CSE student passionate about building clean, modern web experiences and solving real-world problems.
-      </p>
-      <a href="#projects" class="btn">View Projects</a>
-    </div>
-  </section>
+  <!-- HERO -->
+  <section class="banner">
+    <img src="C:\Users\Nissy Niveditha\Pictures\linkedin_banner.jpg" class="banner-img" />
 
-  <!-- About -->
-  <section id="about" class="section fade">
-    <div class="container">
-      <h3>About Me</h3>
-      <p>
-        I am a third-year Computer Science Engineering student focused on developing scalable applications and improving problem-solving through hands-on projects.
-      </p>
-    </div>
-  </section>
+    <div class="overlay"></div>
 
-  <!-- Skills -->
-  <section id="skills" class="section fade">
-    <div class="container">
-      <h3>Skills</h3>
-      <div class="skills-grid">
-        <div class="card"><h4>Languages</h4><p>C, C++, Java, Python</p></div>
-        <div class="card"><h4>Web</h4><p>HTML, CSS, JavaScript</p></div>
-        <div class="card"><h4>CS Fundamentals</h4><p>DSA, OOP, DBMS, OS</p></div>
-        <div class="card"><h4>Tools</h4><p>Git, GitHub, VS Code</p></div>
+    <div class="profile">
+      <img src="your-photo.jpg" class="profile-img" />
+
+      <h1>&lt;/&gt; Nissy Niveditha</h1>
+
+      <p class="typewriter"></p>
+
+      <div class="links">
+        <a href="https://github.com/Nissy-niveditha21">GitHub</a>
+        <a href="https://www.linkedin.com/in/nissy-niveditha-vanguri-a63700344">LinkedIn</a>
+        <a href="mailto:v.nissyniveditha37@gmail.com">Email</a>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section fade">
-    <div class="container">
-      <h3>Projects</h3>
+  <!-- ABOUT -->
+  <section class="section">
+    <h2>About</h2>
+    <p>
+      I build aesthetic, functional and impactful web experiences with a focus on real-world problem solving.
+    </p>
+  </section>
 
-      <div class="card project-card">
-        <h4>Project Name</h4>
-        <p>
-          Built a web application using HTML, CSS, and JavaScript with focus on UI and performance.
-        </p>
-        <div class="project-links">
-          <a href="#">GitHub</a>
-          <a href="#">Live Demo</a>
-        </div>
+  <!-- PROJECTS -->
+  <section class="section">
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+      <div class="project-card" data-img="project1.jpg">
+        <h3>🔇 SilentLink</h3>
+        <p>Accessible communication platform.</p>
+      </div>
+
+      <div class="project-card" data-img="project2.jpg">
+        <h3>💻 TechVere</h3>
+        <p>Modern tech platform for developers.</p>
+      </div>
+
+      <div class="project-card" data-img="project3.jpg">
+        <h3>🧠 Alzheimer’s Detection</h3>
+        <p>Early detection system using intelligent analysis.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section fade">
-    <div class="container">
-      <h3>Contact</h3>
-      <p>Email: v.nissyniveditha37@gmail.com</p>
-      <p>
-        <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
-      </p>
-    </div>
-  </section>
-
-  <footer class="footer">
+  <footer>
     <p>© 2026 Nissy Niveditha</p>
   </footer>
 
   <!-- JS -->
   <script>
-    // Cursor
+
+    /// Cursor
     const cursor = document.querySelector(".cursor");
-    document.addEventListener("mousemove", (e) => {
+    document.addEventListener("mousemove", e => {
       cursor.style.top = e.clientY + "px";
       cursor.style.left = e.clientX + "px";
     });
 
-    // Scroll animation
-    const fades = document.querySelectorAll(".fade");
+    /// Typewriter
+    const text = ["Building real-world tech", "Creating aesthetic UI", "Solving problems with code"];
+    let i = 0, j = 0, current = "", isDeleting = false;
+
+    function type() {
+      current = text[i];
+      document.querySelector(".typewriter").textContent =
+        current.substring(0, j);
+
+      if (!isDeleting && j < current.length) j++;
+      else if (isDeleting && j > 0) j--;
+      else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) i = (i + 1) % text.length;
+      }
+
+      setTimeout(type, isDeleting ? 50 : 100);
+    }
+    type();
+
+    /// Navbar shrink
     window.addEventListener("scroll", () => {
-      fades.forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-          el.classList.add("show");
-        }
+      document.querySelector(".navbar").classList.toggle("shrink", window.scrollY > 50);
+    });
+
+    /// Project hover preview
+    const cards = document.querySelectorAll(".project-card");
+
+    cards.forEach(card => {
+      card.addEventListener("mousemove", e => {
+        const img = card.getAttribute("data-img");
+        card.style.backgroundImage = `url(${img})`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.backgroundImage = "none";
       });
     });
+
   </script>
 
 </body>
+
 </html>
