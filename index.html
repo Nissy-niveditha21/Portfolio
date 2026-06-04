@@ -4,130 +4,614 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nissy Niveditha | Portfolio</title>
-
+  <title>Nissy Niveditha | Software Engineer</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-
-  <!-- Cursor -->
+  <!-- Animated Background Blobs -->
+  <div class="blob-1"></div>
+  <div class="blob-2"></div>
+  
+  <!-- Custom Cursor -->
   <div class="cursor"></div>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <h2>nissy.dev</h2>
-  </nav>
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-dot"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
 
-  <!-- HERO -->
-  <section class="banner">
-    <img src="C:\Users\Nissy Niveditha\Pictures\linkedin_banner.jpg" class="banner-img" />
-
-    <div class="overlay"></div>
-
-    <div class="profile">
-      <img src="your-photo.jpg" class="profile-img" />
-
-      <h1>&lt;/&gt; Nissy Niveditha</h1>
-
-      <p class="typewriter"></p>
-
-      <div class="links">
-        <a href="https://github.com/Nissy-niveditha21">GitHub</a>
-        <a href="https://www.linkedin.com/in/nissy-niveditha-vanguri-a63700344">LinkedIn</a>
-        <a href="mailto:v.nissyniveditha37@gmail.com">Email</a>
+  <!-- Hero Section -->
+  <section id="home" class="hero section">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for Opportunities
+      </div>
+      <h1 class="hero-title">
+        Hi, I'm <span class="highlight">Nissy</span>
+      </h1>
+      <h2 class="hero-subtitle" id="typing-subtitle"></h2>
+      <p class="hero-desc">
+        Final-year Computer Science student building real-world tech with
+        <span class="inline-code">Python</span>, <span class="inline-code">React</span>, and <span
+          class="inline-code">Machine Learning</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/Nissy-niveditha21" target="_blank" class="social-link">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="social-icon"
+            alt="GitHub">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/nissy-niveditha-vanguri-a63700344" target="_blank" class="social-link">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+            class="social-icon" alt="LinkedIn">
+          LinkedIn
+        </a>
+        <a href="mailto:v.nissyniveditha37@gmail.com" class="social-link">
+          <span class="social-icon emoji">📧</span>
+          Email
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section">
-    <h2>About</h2>
-    <p>
-      I build aesthetic, functional and impactful web experiences with a focus on real-world problem solving.
-    </p>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="section">
-    <h2>Projects</h2>
-
-    <div class="projects">
-
-      <div class="project-card" data-img="project1.jpg">
-        <h3>🔇 SilentLink</h3>
-        <p>Accessible communication platform.</p>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-container">
+      <div class="about-left">
+        <div class="about-text">
+          <p>
+            I'm a final-year Computer Science student at <span class="strong">Malla Reddy Engineering College for
+              Women</span> with a CGPA of <span class="strong">8.7</span>.
+          </p>
+          <p>
+            I love turning complex problems into simple, beautiful, and intuitive code. Whether it's building responsive
+            web apps, training ML models, or automating workflows, I'm always up for a challenge! 🚀
+          </p>
+        </div>
       </div>
+      <div class="about-right">
+        <div class="code-card">
+          <div class="code-header">
+            <div class="code-dot red"></div>
+            <div class="code-dot yellow"></div>
+            <div class="code-dot green"></div>
+            <span class="code-title">about.py</span>
+          </div>
+          <pre class="code-content">
+<span class="keyword">class</span> <span class="class-name">SoftwareEngineer</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="param">self</span>):
+        <span class="param">self</span>.name = <span class="string">"Nissy Niveditha"</span>
+        <span class="param">self</span>.role = <span class="string">"AI & Full-Stack Dev"</span>
 
-      <div class="project-card" data-img="project2.jpg">
-        <h3>💻 TechVere</h3>
-        <p>Modern tech platform for developers.</p>
+    <span class="keyword">def</span> <span class="function">get_skills</span>(<span class="param">self</span>):
+        <span class="keyword">return</span> {
+            <span class="string">"languages"</span>: [<span class="string">"Python"</span>, <span class="string">"Java"</span>, <span class="string">"C"</span>],
+            <span class="string">"web"</span>: [<span class="string">"React"</span>, <span class="string">"Node.js"</span>, <span class="string">"Flask"</span>],
+            <span class="string">"ai"</span>: [<span class="string">"ML"</span>, <span class="string">"DL"</span>, <span class="string">"NLP"</span>]
+        }
+
+    <span class="keyword">def</span> <span class="function">passion</span>(<span class="param">self</span>):
+        <span class="keyword">return</span> <span class="string">"Building stuff that matters! 💪"</span>
+          </pre>
+        </div>
       </div>
-
-      <div class="project-card" data-img="project3.jpg">
-        <h3>🧠 Alzheimer’s Detection</h3>
-        <p>Early detection system using intelligent analysis.</p>
+    </div>
+    <div class="about-cards">
+      <div class="about-card" data-delay="0">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" class="company-logo"
+          alt="LeetCode">
+        <h3>LeetCode</h3>
+        <p>30+ Days Streak 🔥</p>
       </div>
-
+      <div class="about-card" data-delay="200">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codechef/codechef-original.svg"
+          class="company-logo" alt="CodeChef">
+        <h3>CodeChef</h3>
+        <p>15+ Days Streak 🔥</p>
+      </div>
+      <div class="about-card" data-delay="400">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png" class="company-logo"
+          alt="HackerRank">
+        <h3>HackerRank</h3>
+        <p>10+ Days Streak 🔥</p>
+      </div>
     </div>
   </section>
 
+  <!-- Skills Section -->
+  <section id="skills" class="section bg-dark">
+    <h2 class="section-title light">Tech Stack</h2>
+
+    <!-- Compiler Button -->
+    <div class="compiler-section">
+      <button class="compiler-btn" id="compileBtn">
+        🔧 Compile Tech Stack!
+      </button>
+    </div>
+
+    <div class="skills-grid" id="skillsGrid">
+      <div class="skill-category" id="cat-languages" data-delay="0">
+        <div class="category-header">
+          <h4>💻 Languages</h4>
+        </div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="skill-logo"
+              alt="Python">
+            <span class="skill-tag">Python</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="skill-logo"
+              alt="Java">
+            <span class="skill-tag">Java</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="skill-logo" alt="C">
+            <span class="skill-tag">C</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              class="skill-logo" alt="JavaScript">
+            <span class="skill-tag">JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="skill-logo"
+              alt="SQL">
+            <span class="skill-tag">SQL</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category" id="cat-web" data-delay="100">
+        <div class="category-header">
+          <h4>🌐 Web Dev</h4>
+        </div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="skill-logo"
+              alt="React">
+            <span class="skill-tag">React.js</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="skill-logo"
+              alt="Next.js">
+            <span class="skill-tag">Next.js</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="skill-logo"
+              alt="Node.js">
+            <span class="skill-tag">Node.js</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+              class="skill-logo" alt="Express.js">
+            <span class="skill-tag">Express.js</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" class="skill-logo"
+              alt="Flask">
+            <span class="skill-tag">Flask</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="skill-logo"
+              alt="HTML5">
+            <span class="skill-tag">HTML5</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="skill-logo"
+              alt="CSS3">
+            <span class="skill-tag">CSS3</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category" id="cat-ai" data-delay="200">
+        <div class="category-header">
+          <h4>🤖 AI/ML</h4>
+        </div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+              class="skill-logo" alt="TensorFlow">
+            <span class="skill-tag">TensorFlow</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+              class="skill-logo" alt="PyTorch">
+            <span class="skill-tag">PyTorch</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="skill-logo"
+              alt="NumPy">
+            <span class="skill-tag">NumPy</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="skill-logo"
+              alt="Pandas">
+            <span class="skill-tag">Pandas</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-tag">NLP</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category" id="cat-tools" data-delay="300">
+        <div class="category-header">
+          <h4>🛠️ Tools</h4>
+        </div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="skill-logo"
+              alt="Git">
+            <span class="skill-tag">Git</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="skill-logo"
+              alt="GitHub">
+            <span class="skill-tag">GitHub</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="skill-logo"
+              alt="VS Code">
+            <span class="skill-tag">VS Code</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-tag">Postman</span>
+          </div>
+          <div class="skill-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/ServiceNow_Logo.png" class="skill-logo"
+              alt="ServiceNow">
+            <span class="skill-tag">ServiceNow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Interesting Tech Content -->
+    <div class="tech-fun" id="techFun">
+      <div class="fun-item" data-delay="0">🎨 Designing beautiful UIs</div>
+      <div class="fun-item" data-delay="100">🚀 Shipping fast and often</div>
+      <div class="fun-item" data-delay="200">🧩 Solving complex problems</div>
+      <div class="fun-item" data-delay="300">☕ Fueled by coffee</div>
+      <div class="fun-item" data-delay="400">📚 Learning new things daily</div>
+      <div class="fun-item" data-delay="500">🎮 Building cool stuff</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card" data-delay="0">
+        <div class="project-header">
+          <div class="project-icon">🔇</div>
+          <div class="project-links">
+            <a href="#" class="project-link">Live Demo →</a>
+          </div>
+        </div>
+        <h3>SilentLink</h3>
+        <p class="project-desc">
+          Real-time multilingual gesture-to-speech system using MediaPipe and deep learning with 86% accuracy and ~20ms
+          latency.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">OpenCV</span>
+          <span class="tech-tag">MediaPipe</span>
+          <span class="tech-tag">TensorFlow</span>
+          <span class="tech-tag">Flask</span>
+        </div>
+      </div>
+      <div class="project-card" data-delay="200">
+        <div class="project-header">
+          <div class="project-icon">🧠</div>
+          <div class="project-links">
+            <a href="#" class="project-link">Live Demo →</a>
+          </div>
+        </div>
+        <h3>Adaptive AI Learning Agent</h3>
+        <p class="project-desc">
+          Retrieval-augmented tutoring system with FAISS + LangGraph. Automated question generation and mastery-based
+          learning.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">LangChain</span>
+          <span class="tech-tag">HuggingFace</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section bg-dark">
+    <h2 class="section-title light">Experience</h2>
+    <div class="experience-grid">
+      <div class="exp-card" data-delay="0">
+        <div class="exp-badge">Intern</div>
+        <h3>ServiceNow</h3>
+        <p class="exp-time">May - Aug 2025</p>
+        <ul class="exp-points">
+          <li>Built ITSM workflow automation</li>
+          <li>Worked on Agentic AI concepts</li>
+          <li>Validated workflows with ATF</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Flow Designer</span>
+          <span class="exp-tag">AI</span>
+          <span class="exp-tag">Automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="section">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certs-grid">
+      <div class="cert-card" data-delay="0">
+        <div class="cert-image-placeholder">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png" class="cert-logo"
+            alt="HackerRank">
+        </div>
+        <h3>HackerRank</h3>
+        <p>Python, Java, SQL (Gold Badges)</p>
+      </div>
+      <div class="cert-card" data-delay="100">
+        <div class="cert-image-placeholder">
+          <img src="https://www.logo.wine/a/logo/Cisco_Systems/Cisco_Systems-Icon-Logo.wine.svg" class="cert-logo"
+            alt="Cisco">
+        </div>
+        <h3>Cisco</h3>
+        <p>Advanced C, Cybersecurity Essentials, Network Technician Path</p>
+      </div>
+      <div class="cert-card" data-delay="200">
+        <div class="cert-image-placeholder">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="cert-logo" alt="IBM">
+        </div>
+        <h3>IBM</h3>
+        <p>Python for Data Science (NumPy, Pandas)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Section -->
+  <section id="leadership" class="section bg-dark">
+    <h2 class="section-title light">Leadership & Achievements</h2>
+    <div class="achievements-container">
+      <div class="achievement-card" data-delay="0">
+        <img src="https://hack2skill.com/static/media/logo2.d717100f.png" class="achievement-logo" alt="Hack2Skills">
+        <h4>Hack2Skills Ambassador</h4>
+      </div>
+      <div class="achievement-card" data-delay="150">
+        <span class="achievement-logo"
+          style="font-size: 3rem; background: var(--bg-light); display: flex; align-items: center; justify-content: center; border-radius: 16px; width: 80px; height: 80px;">🏆</span>
+        <h4>Open Source Contributor (GSSoC '26)</h4>
+        <p>Bug fixes, feature enhancements, plugin development</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="contact-container">
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="contact-subtitle">
+        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+      </p>
+      <div class="contact-grid">
+        <a href="mailto:v.nissyniveditha37@gmail.com" class="contact-card" data-delay="0">
+          <span class="contact-icon">📧</span>
+          <h4>Email</h4>
+          <p>v.nissyniveditha37@gmail.com</p>
+        </a>
+        <div class="contact-card" data-delay="100">
+          <span class="contact-icon">📱</span>
+          <h4>Phone</h4>
+          <p>6302153351</p>
+        </div>
+        <a href="https://github.com/Nissy-niveditha21" target="_blank" class="contact-card" data-delay="200">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="contact-logo"
+            alt="GitHub">
+          <h4>GitHub</h4>
+          <p>github.com/Nissy-niveditha21</p>
+        </a>
+        <a href="https://www.linkedin.com/in/nissy-niveditha-vanguri-a63700344" target="_blank" class="contact-card"
+          data-delay="300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+            class="contact-logo" alt="LinkedIn">
+          <h4>LinkedIn</h4>
+          <p>linkedin.com/in/nissy-niveditha-vanguri-a63700344</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2026 Nissy Niveditha</p>
+    <p>© 2026 Nissy Niveditha. Built with 💻 and ☕</p>
   </footer>
 
-  <!-- JS -->
+  <!-- JavaScript -->
   <script>
-
-    /// Cursor
+    // Custom Cursor
     const cursor = document.querySelector(".cursor");
     document.addEventListener("mousemove", e => {
       cursor.style.top = e.clientY + "px";
       cursor.style.left = e.clientX + "px";
     });
 
-    /// Typewriter
-    const text = ["Building real-world tech", "Creating aesthetic UI", "Solving problems with code"];
-    let i = 0, j = 0, current = "", isDeleting = false;
+    // Add cursor hover effect on clickable elements
+    const clickables = document.querySelectorAll('a, button, .btn, .skill-tag, .tech-tag, .exp-tag');
+    clickables.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+        cursor.style.borderColor = '#3b82f6';
+        cursor.style.boxShadow = '0 0 40px rgba(59,130,246,0.4)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.borderColor = '#3b82f6';
+        cursor.style.boxShadow = '0 0 30px rgba(59,130,246,0.2)';
+      });
+    });
 
-    function type() {
-      current = text[i];
-      document.querySelector(".typewriter").textContent =
-        current.substring(0, j);
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
 
-      if (!isDeleting && j < current.length) j++;
-      else if (isDeleting && j > 0) j--;
-      else {
-        isDeleting = !isDeleting;
-        if (!isDeleting) i = (i + 1) % text.length;
+    // Hide scroll indicator after scrolling a bit
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 150) {
+        scrollIndicator.style.opacity = '0';
+        scrollIndicator.style.transform = 'translateX(-50%) translateY(20px)';
+      } else {
+        scrollIndicator.style.opacity = '1';
+        scrollIndicator.style.transform = 'translateX(-50%) translateY(0)';
+      }
+    });
+
+    // Typing Effect (repeating)
+    const typingSubtitle = document.getElementById('typing-subtitle');
+    const texts = [
+      'Software Engineer & AI Developer',
+      'Full-Stack Developer',
+      'Machine Learning Enthusiast',
+      'Open Source Contributor',
+      'Problem Solver & Builder'
+    ];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeWriter() {
+      const currentText = texts[textIndex];
+
+      if (isDeleting) {
+        typingSubtitle.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingSubtitle.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
       }
 
-      setTimeout(type, isDeleting ? 50 : 100);
+      let typeSpeed = 80;
+
+      if (isDeleting) {
+        typeSpeed /= 2;
+      }
+
+      if (!isDeleting && charIndex === currentText.length) {
+        typeSpeed = 2000; // Pause at end
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        typeSpeed = 500;
+      }
+
+      setTimeout(typeWriter, typeSpeed);
     }
-    type();
 
-    /// Navbar shrink
-    window.addEventListener("scroll", () => {
-      document.querySelector(".navbar").classList.toggle("shrink", window.scrollY > 50);
+    setTimeout(typeWriter, 500);
+
+    // Tech Stack Compiler
+    let isCompiled = false;
+    const compileBtn = document.getElementById('compileBtn');
+    const categories = ['cat-languages', 'cat-web', 'cat-ai', 'cat-tools'];
+
+    compileBtn.addEventListener('click', () => {
+      if (!isCompiled) {
+        isCompiled = true;
+        compileBtn.textContent = '🔄 Re-compile!';
+
+        // Drop categories one by one
+        categories.forEach((catId, index) => {
+          setTimeout(() => {
+            const cat = document.getElementById(catId);
+            if (cat) {
+              cat.classList.add('visible');
+            }
+          }, index * 400); // 400ms delay between each category
+        });
+
+      } else {
+        // Reset and compile again!
+        isCompiled = false;
+        compileBtn.textContent = '🔧 Compile Tech Stack!';
+
+        categories.forEach((catId) => {
+          const cat = document.getElementById(catId);
+          if (cat) {
+            cat.classList.remove('visible');
+          }
+        });
+      }
     });
 
-    /// Project hover preview
-    const cards = document.querySelectorAll(".project-card");
+    // Intersection Observer for other Animations (not categories)
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
 
-    cards.forEach(card => {
-      card.addEventListener("mousemove", e => {
-        const img = card.getAttribute("data-img");
-        card.style.backgroundImage = `url(${img})`;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('skill-category')) {
+          const delay = entry.target.getAttribute('data-delay') || 0;
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, parseInt(delay));
+        }
       });
+    }, observerOptions);
 
-      card.addEventListener("mouseleave", () => {
-        card.style.backgroundImage = "none";
-      });
+    // Observe all elements with data-delay except skill categories
+    document.querySelectorAll('[data-delay]:not(.skill-category)').forEach(el => {
+      observer.observe(el);
     });
 
+    // Observe sections for pop-up effect
+    const sectionObserverOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, sectionObserverOptions);
+
+    // Make sure hero section is always visible!
+    document.getElementById('home').classList.add('visible');
+
+    document.querySelectorAll('.section').forEach(section => {
+      sectionObserver.observe(section);
+    });
   </script>
-
 </body>
 
 </html>
