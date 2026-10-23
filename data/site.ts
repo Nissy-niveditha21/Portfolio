@@ -18,7 +18,7 @@ export const site = {
   githubHandle: 'Nissy-niveditha21',
   linkedin: 'https://www.linkedin.com/in/nissy-niveditha-vanguri-a63700344',
   college: 'Malla Reddy Engineering College for Women',
-  cgpa: '8.7',
+  cgpa: '8.8',
   title: 'Nissy Niveditha — Software Engineer & AI Developer',
   description:
     'Final-year Computer Science student and software engineer building production web apps and AI systems with Python, TypeScript, React and machine learning.',
@@ -30,6 +30,7 @@ export type NavLink = { id: string; label: string };
 export const navLinks: NavLink[] = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Stack' },
+  { id: 'coding', label: 'Coding' },
   { id: 'projects', label: 'Projects' },
   { id: 'open-source', label: 'Open Source' },
   { id: 'experience', label: 'Experience' },
@@ -45,10 +46,10 @@ export const typingRoles = [
 ];
 
 export const heroStats = [
-  { value: '15+', label: 'Projects built' },
-  { value: '6', label: 'Live deployments' },
+  { value: '6', label: 'Projects built' },
+  { value: '4', label: 'Live deployments' },
   { value: site.cgpa, label: 'CGPA' },
-  { value: '30+', label: 'Day DSA streak' },
+  { value: '152', label: 'LeetCode solved' },
 ];
 
 /* -------------------------------------------------------------------------- */
@@ -156,25 +157,94 @@ export const aboutCode: CodeToken[][] = [
 
 export const aboutCodeText = aboutCode.map((line) => line.map((t) => t.v).join('')).join('\n');
 
-export type Streak = { name: string; detail: string; logo: string };
+/* -------------------------------------------------------------------------- */
+/* Coding profiles — every number below was read off the live profile pages.   */
+/* -------------------------------------------------------------------------- */
 
-export const streaks: Streak[] = [
+export type CodingProfile = {
+  name: string;
+  handle: string;
+  url: string;
+  logo: string;
+  /** Basename of the screenshot in /public/previews (e.g. "leetcode" -> leetcode.jpg). */
+  slug: string;
+  /** Small label above the headline metric. */
+  tag: string;
+  /** The flash-card headline number. */
+  metric: string;
+  /** What that number measures. */
+  metricLabel: string;
+  stats: { value: string; label: string }[];
+};
+
+export const codingProfiles: CodingProfile[] = [
   {
     name: 'LeetCode',
-    detail: '30+ Days Streak 🔥',
+    handle: '@Nissy_Niveditha',
+    url: 'https://leetcode.com/u/Nissy_Niveditha/',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png',
+    slug: 'leetcode',
+    tag: '🔥 Current streak',
+    metric: '30',
+    metricLabel: 'day streak',
+    stats: [
+      { value: '152', label: 'Problems solved' },
+      { value: '68 / 72 / 12', label: 'Easy / Medium / Hard' },
+      { value: '#1,167,557', label: 'Global rank' },
+    ],
   },
   {
     name: 'CodeChef',
-    detail: '15+ Days Streak 🔥',
+    handle: '@mrew23rh1a05rg',
+    url: 'https://www.codechef.com/users/mrew23rh1a05rg',
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codechef/codechef-original.svg',
+    slug: 'codechef',
+    tag: '🏅 Gold streak badge',
+    metric: '50',
+    metricLabel: 'day streak',
+
+    stats: [
+      { value: '401', label: 'Problems solved, Problem Solver - Silver Badge 🥈' },
+      { value: '1173', label: 'Rating (1★)' },
+      { value: '18', label: 'Rated contests' },
+    ],
   },
   {
     name: 'HackerRank',
-    detail: '10+ Days Streak 🔥',
+    handle: '@v_nissynivedith1',
+    url: 'https://www.hackerrank.com/profile/v_nissynivedith1',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png',
+    slug: 'hackerrank',
+    tag: '🎖️ Badge collection',
+    metric: '5',
+    metricLabel: 'badges earned',
+    stats: [
+      { value: '4', label: 'Verified certificates' },
+      { value: 'Python · Java', label: 'Core badges' },
+      { value: 'SQL (Advanced)', label: 'Top certificate' },
+    ],
   },
 ];
+
+/** The GSSoC contributor profile, rendered with the same chrome as a project card. */
+export const gssocProfile = {
+  program: 'GirlScript Summer of Code',
+  name: 'GSSoC 2026 Contributor Profile',
+  role: 'Open Source Contributor · GSSoC 2026',
+  domain: 'gssoc.girlscript.org/profile/19927e4f…',
+  url: 'https://gssoc.girlscript.org/profile/19927e4f-5a5c-40d8-bbc8-0007ab6ff0e2',
+  image: asset('/previews/gssoc.jpg'),
+  statusLabel: '1,739 points',
+  meta: ['Verified contributor', '1,739 contribution points', 'GSSoC 2026'],
+  description:
+    `The live leaderboard profile behind my open source work — 1,739 contribution points as a GSSoC 2026 contributor from ${site.college}.`,
+  highlights: [
+    '1,739 contribution points in GSSoC 2026',
+    'Bug fixes, feature enhancements and plugin development',
+    'Verifiable on the official GirlScript leaderboard',
+  ],
+  tags: ['Open Source', 'Bug Fixes', 'Feature Enhancements', 'Plugin Development'],
+};
 
 /* -------------------------------------------------------------------------- */
 /* Tech stack                                                                 */

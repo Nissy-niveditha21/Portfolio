@@ -9,7 +9,7 @@ export default function Experience() {
       <div className="container">
         <Reveal>
           <SectionHeading
-            eyebrow="05 — Experience"
+            eyebrow="06 — Experience"
             title="Where I've put the theory to work"
             description="Internships, certifications and community roles."
           />

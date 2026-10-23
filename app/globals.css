@@ -804,45 +804,259 @@ svg.icon {
   font-size: 1.02rem;
 }
 
-.streak-grid {
+/* -------------------------------------------------------------------------- */
+/* Coding profile flash cards                                                 */
+/* -------------------------------------------------------------------------- */
+
+.coding-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
-  margin-top: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
 }
 
-.streak-card {
+/* 3D memory card — front is the streak, back is the account-page screenshot. */
+.flip-card {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  perspective: 1400px;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.flip-card:hover {
+  transform: translateY(-6px);
+}
+
+.flip-inner {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.flip-card.is-flipped .flip-inner,
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-front {
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px 22px;
+  background:
+    radial-gradient(130% 90% at 100% 0%, rgba(79, 70, 229, 0.08), transparent 58%),
+    var(--surface);
+}
+
+.code-mid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(180deg, #f8fafc, #eef2f7);
+}
+
+.flip-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.flip-caption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-sm);
+}
+
+.flip-caption svg.icon {
+  width: 13px;
+  height: 13px;
+  color: var(--primary);
+}
+
+.code-card-top {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  padding: 14px 16px;
-  box-shadow: var(--shadow-xs);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.streak-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.streak-card img {
-  width: 26px;
-  height: 26px;
+.code-card-top img {
+  width: 28px;
+  height: 28px;
   object-fit: contain;
   flex: none;
 }
 
-.streak-card strong {
-  display: block;
-  font-size: 0.9rem;
+.code-brand {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.3;
 }
 
-.streak-card span {
-  font-size: 0.78rem;
+.code-brand strong {
+  font-size: 0.98rem;
+}
+
+.code-brand span {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
   color: var(--text-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.code-open {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin-left: auto;
+  color: var(--border-strong);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.flip-card:hover .code-open {
+  color: var(--primary);
+  transform: translate(2px, -2px);
+}
+
+.code-tag {
+  align-self: flex-start;
+  font-size: 0.71rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+  border: 1px solid #e0e7ff;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.code-hero {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+}
+
+.code-hero-value {
+  font-size: 2.15rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  background: linear-gradient(135deg, #0f172a 20%, #4f46e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.code-hero-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.code-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding-top: 13px;
+  border-top: 1px dashed var(--border);
+}
+
+.code-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.code-stat b {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.code-stat i {
+  font-style: normal;
+  font-size: 0.68rem;
+  color: var(--text-soft);
+  line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+  .flip-front {
+    padding: 16px 18px;
+  }
+
+  .code-hero-value {
+    font-size: 1.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner {
+    transition: none;
+  }
+}
+
+.gssoc-block {
+  margin-top: 48px;
+}
+
+.sub-heading {
+  margin-bottom: 22px;
+}
+
+.sub-heading h3 {
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.sub-heading p {
+  margin-top: 6px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.gssoc-card {
+  max-width: 940px;
+  margin: 0 auto;
 }
 
 /* -------------------------------------------------------------------------- */
