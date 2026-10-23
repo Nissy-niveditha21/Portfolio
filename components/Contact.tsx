@@ -15,7 +15,7 @@ export default function Contact() {
       <div className="container">
         <Reveal>
           <SectionHeading
-            eyebrow="06 — Contact"
+            eyebrow="07 — Contact"
             title="Let's build something together"
             description="Open to 2026 software engineering and AI/ML internships and full-time roles."
             align="center"

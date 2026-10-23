@@ -9,7 +9,7 @@ export default function Projects() {
       <div className="container">
         <Reveal>
           <SectionHeading
-            eyebrow="03 — Projects"
+            eyebrow="04 — Projects"
             title="Built by me, deployed for real"
             description="Every card below links to a running deployment — no mockups, no dead links."
           />

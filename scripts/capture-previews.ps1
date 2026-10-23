@@ -1,3 +1,5 @@
+param([string[]]$Only)
+
 Add-Type -AssemblyName System.Drawing
 
 $dir = 'd:\Portfolio\public\previews'
@@ -11,6 +13,10 @@ $targets = [ordered]@{
   'silentlink'  = 'https://silentlink-gamma.vercel.app'
   'envforge'    = 'https://env-forage.vercel.app'
   'waggle'      = 'https://pypi.org/project/waggle-mcp/'
+  'gssoc'       = 'https://gssoc.girlscript.org/profile/19927e4f-5a5c-40d8-bbc8-0007ab6ff0e2'
+  'leetcode'    = 'https://leetcode.com/u/Nissy_Niveditha/'
+  'codechef'    = 'https://www.codechef.com/users/mrew23rh1a05rg'
+  'hackerrank'  = 'https://www.hackerrank.com/profile/v_nissynivedith1'
 }
 
 function Save-Jpeg16x9 {
@@ -40,6 +46,8 @@ function Save-Jpeg16x9 {
 }
 
 foreach ($name in $targets.Keys) {
+  if ($Only -and ($Only -notcontains $name)) { continue }
+
   $enc = [uri]::EscapeDataString($targets[$name])
   $api = "https://api.microlink.io/?url=$enc&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900"
   $raw = Join-Path $dir "_raw_$name.png"

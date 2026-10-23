@@ -9,7 +9,7 @@ export default function OpenSource() {
       <div className="container">
         <Reveal>
           <SectionHeading
-            eyebrow="04 — Open Source"
+            eyebrow="05 — Open Source"
             title="Contributions to other people's code"
             description="Live deployments I run and contribute to on upstream projects. Credit stays with the original authors."
           />
